@@ -1,0 +1,62 @@
+/* ===================================================================
+   arXiv Classic — revert the 2026-06-26 chrome redesign
+   -------------------------------------------------------------------
+   That update ADDED one stylesheet: arxiv-header-footer.css (the new
+   ".ds-*" design system) — a dark-brown header, a warm-grey footer, a
+   font swap to IBM Plex Sans. The body/content stylesheet (arXiv.css)
+   was NOT changed, so article/abstract pages need nothing. Everything
+   below targets only that new header/footer chrome.
+   =================================================================== */
+
+/* --- 1. Header bar: dark "ink" (#1C1A17) -> classic crimson --------- */
+.ds-site-header,
+.ds-site-header.is-collapsible .ds-site-header-nav,
+.ds-skip-link {
+  background: #B31B1B !important;
+}
+
+/* Nav links: classic white, legible on crimson (was muted warm grey) */
+.ds-site-header-nav a,
+.ds-site-header-nav button,
+.ds-site-header-nav a:visited,
+.ds-site-header-login {
+  color: #ffffff !important;
+}
+.ds-site-header-nav .ds-nav-icon { opacity: 0.85 !important; }
+
+/* Hover (was #302C28 brown) */
+.ds-site-header-nav a:hover,
+.ds-site-header-nav button:hover,
+.ds-site-header-nav-toggle:hover {
+  background: #8F1616 !important;
+  color: #ffffff !important;
+}
+
+/* Dividers + mobile nav borders (were #4A433D brown) */
+.ds-site-header-divider { background: #CB4B4B !important; }
+.ds-site-header.is-collapsible .ds-site-header-nav a,
+.ds-site-header.is-collapsible .ds-site-header-nav button {
+  border-color: #CB4B4B !important;
+}
+
+/* --- 2. Warm (brownish) neutrals -> cool classic greys ------------- */
+/* These tokens are scoped to the chrome only, so remapping them is safe
+   and strips the warm cast from the footer + borders in one shot.
+   NOTE: we deliberately do NOT remap --arxiv-ink — it doubles as the
+   footer/announcement TEXT colour, so flipping it would recolour text. */
+:root {
+  --arxiv-grey:         #616161 !important;  /* warm #6B6459 */
+  --arxiv-warm-wash:    #f5f5f5 !important;  /* warm #F9F7F7 (footer bg) */
+  --arxiv-card-grey:    #f0f0f0 !important;  /* warm #F0EEEC */
+  --arxiv-pill-border:  #e0e0e0 !important;  /* warm #E4E0DB (borders) */
+  --arxiv-border-light: #dddddd !important;  /* warm #DDD8D2 */
+}
+
+/* --- 3. Font: undo the IBM Plex Sans swap (optional) --------------- */
+/* The redesign self-hosts IBM Plex Sans and applies it to the chrome via
+   --arxiv-font-sans. This restores a classic system sans stack. Delete
+   this block if you'd rather keep IBM Plex Sans. */
+:root {
+  --arxiv-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Lucida Grande", Helvetica, Arial, sans-serif !important;
+}

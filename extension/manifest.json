@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "arXiv Classic",
+  "version": "2.0",
+  "description": "Reverts arXiv's 2026-06-26 chrome redesign: classic Cornell-red header (#B31B1B), cool greys, classic font.",
+  "content_scripts": [
+    {
+      "matches": ["*://arxiv.org/*", "*://*.arxiv.org/*"],
+      "css": ["crimson.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}
