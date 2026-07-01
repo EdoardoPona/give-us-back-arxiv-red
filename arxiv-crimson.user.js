@@ -24,6 +24,11 @@
     .ds-site-header-login { color: #ffffff !important; }
     .ds-site-header-nav .ds-nav-icon { opacity: 0.85 !important; }
 
+    /* Logo: swap the solid-X redesign mark for arXiv's classic one-colour-white logo */
+    .ds-site-header-logo img {
+      content: url("https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg") !important;
+    }
+
     .ds-site-header-nav a:hover,
     .ds-site-header-nav button:hover,
     .ds-site-header-nav-toggle:hover { background: #8F1616 !important; color: #ffffff !important; }

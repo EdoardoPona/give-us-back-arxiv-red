@@ -24,6 +24,14 @@
 }
 .ds-site-header-nav .ds-nav-icon { opacity: 0.85 !important; }
 
+/* Logo: the redesign's mark has a SOLID filled "X" — whitening it just makes a
+   heavy white blob. Instead swap in arXiv's classic one-colour-white logo (the
+   thin outlined "X"), which is still served from arxiv.org. Same-origin, so the
+   url() resolves for the userstyle, extension, and userscript alike. */
+.ds-site-header-logo img {
+  content: url("https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg") !important;
+}
+
 /* Hover (was #302C28 brown) */
 .ds-site-header-nav a:hover,
 .ds-site-header-nav button:hover,

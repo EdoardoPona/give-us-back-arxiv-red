@@ -85,6 +85,7 @@ Extensions.
 | nav hover                      | `#302C28`           | `#8F1616`          |
 | dividers / mobile nav borders  | `#4A433D`           | `#CB4B4B`          |
 | nav link text                  | `#B0ABA6`           | `#FFFFFF`          |
+| logo                           | solid-X grey mark   | classic white one-colour logo |
 | footer background (warm wash)  | `#F9F7F7`           | `#F5F5F5`          |
 | card grey                      | `#F0EEEC`           | `#F0F0F0`          |
 | pill / funder border           | `#E4E0DB`           | `#E0E0E0`          |
